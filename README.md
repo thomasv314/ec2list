@@ -12,6 +12,13 @@ $ time ec2list # 0.011 seconds * 100 = 1.1 seconds
 
 ## install it
 ```
+curl https://github.com/thomasv314/ec2list/releases/download/v0.0.1/ec2list-osx > ~/bin/ec2list
+chmod u+x ~/bin/ec2list
+ec2list --setup
+```
+
+## build it
+```
 git clone git@github.com:thomasv314/ec2list.git
 cd ec2list
 go build -o ec2list *.go
