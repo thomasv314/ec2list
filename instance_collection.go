@@ -2,9 +2,7 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
-	"os"
 	"time"
 )
 
@@ -52,11 +50,4 @@ func (c *InstanceCollection) WriteToDisk() {
 
 func (c *InstanceCollection) VpcName(vpcId string) string {
 	return c.Vpcs[vpcId]
-}
-
-func check(err error) {
-	if err != nil {
-		fmt.Println("Error", err)
-		os.Exit(1)
-	}
 }

@@ -9,20 +9,30 @@ import (
 )
 
 func (c *InstanceCollection) ShowList() {
-
-	fmt.Println(len(c.Instances))
 	c.FilterInstances()
 
 	instances := Instances(c.Instances)
 	sort.Sort(instances)
 
-	printUiTable(instances)
+	if *flgShortOutput {
+		printShortOutput(instances)
+	} else {
+		printUiTable(instances)
+	}
+}
 
+func printShortOutput(instances Instances) {
+	str := ""
+	for i := range instances {
+		str = str + " " + instances[i].PrivateIp
+	}
+
+	fmt.Println(str)
 }
 
 func printUiTable(instances Instances) {
 	table := uitable.New()
-	table.MaxColWidth = 50
+	table.MaxColWidth = 35
 	table.AddRow("vpcId", "vpc", "name", "type", "privateIp", "publicIp", "role", "environment")
 
 	for i := range instances {
@@ -39,7 +49,9 @@ func printUiTable(instances Instances) {
 		)
 	}
 
+	fmt.Println("Found", len(instances), "instances")
 	fmt.Print(table)
+
 }
 
 type Instances []Instance
