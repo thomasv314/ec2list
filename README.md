@@ -1,8 +1,9 @@
+#ec2list 
 ## wtf is this?
 i dunno it fetches ec2 instance lists, caches them locally, refreshes/filters by vpc/tag/role/etc, works w/ multiple profiles, and does helpful things that make life easier
 
 ## why?
-i had a ruby task to do this but each execution took 2.26 seconds to run.it felt like forever and i couldnt stand to sit around waiting for it. i was upset. so then i wrote this and now it only takes 0.01 seconds to run and its fast so im happy (boom)
+i had a ruby task to do this but each execution took 2.26 seconds to run. it felt like forever and i couldnt stand to sit around waiting for it. i was upset. so then i wrote this and now it only takes 0.01 seconds to run and its fast so im happy (boom)
 
 ```
 $ time bundle exec thor aws:list_instances # 2.264 seconds * 100 = 3.6 minutes
