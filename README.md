@@ -7,7 +7,7 @@ i had a ruby task to do this but each execution took 2.26 seconds to run. it fel
 
 ```
 $ time bundle exec thor aws:list_instances # 2.264 seconds * 100 = 3.6 minutes
-$ time ec2list # 0.011 seconds * 100 = 1.1 seconds
+$ time ec2list                             # 0.011 seconds * 100 = 1.1 seconds
 ```
 
 ## install it
